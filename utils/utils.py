@@ -156,7 +156,7 @@ def set_tracker_config(cfg_path, tracker):
         if key == 'll-config-file' :
             tracker_ll_config_file = config.get('tracker', key)
             tracker.set_property('ll-config-file', tracker_ll_config_file)
-        if key == 'enable-batch-process' :
+        if key == 'enable-batch-process' and tracker.find_property(key) is not None:
             tracker_enable_batch_process = config.getint('tracker', key)
             tracker.set_property('enable_batch_process', tracker_enable_batch_process)
         if key == 'enable-past-frame' :
